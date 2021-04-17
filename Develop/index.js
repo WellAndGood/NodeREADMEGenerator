@@ -124,19 +124,19 @@ Use the following command to run tests:
 ## Contributors
 ${data.collaborators}
 
-## License
+## License &nbsp; ${data.badge}
 This project is licensed under:
 ${data.license}
-<pre></pre>
-${data.badge}
+
 
 
 # Contact
 * GitHub account: ${data.username}
 * E-Mail: ${data.email}
     `
-    
-    fs.writeFile(fileName, readmeTemplate, (err) =>
+    const filePath = "./README-Files/" + fileName
+
+    fs.writeFile(filePath, readmeTemplate, (err) =>
     err ? console.error(err) : console.log('Success!')
     )
 }

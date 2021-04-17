@@ -1,5 +1,5 @@
 
-# Node - README Generator
+# READMEProject
 ## Author: WellAndGood
 
 # Table of Contents
@@ -7,6 +7,9 @@
 * [Usage](#usage)
 * [Contributors](#contributors)
 * [License](#license)
+
+## Description
+This is a brief description of the project.
 
 # Installation
 Use the following command in your console to install dependencies:
@@ -16,26 +19,20 @@ Use the following command in your console to install dependencies:
 Use the following command to run tests:
 <pre>node index.js</pre>
 
-How to use the application: Everything you need is found in this README
-
-<br>
-How to contribute to the application: Contact me first
-
-## Description
-It's a cool project that works!
+**How to use the application**: Read the README for everything you need to know.
+<br><br>
+**How to contribute to the application**: Contact me in advance before making contributions.
 
 ## Contributors
 Myself
 
-## License
+## License &nbsp; [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 This project is licensed under:
-APACHE 2.0
-<br>
-<br>
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+MIT
+
 
 
 # Contact
 * GitHub account: WellAndGood
-* E-Mail: daniel@gmail.com
+* E-Mail: danielpisani@gmail.com
     
