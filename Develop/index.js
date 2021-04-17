@@ -41,7 +41,7 @@ const questions = [
         type: 'list',
         message: 'What license will you be using?',
         name: 'license',
-        choices: ['Public Domain','LGPL','Permissive', 'CopyLeft', 'Proprietary']
+        choices: ['MIT','APACHE 2.0','GPL 3.0', 'BSD 3', 'Other']
         // validate: validator
     },
     {
@@ -76,44 +76,67 @@ const questions = [
     }
 ];
 
+function matchingBadge(response) {
+    if (response.license === "MIT") {
+        response.badge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+    } else if (response.license === "APACHE 2.0") {
+        response.badge = "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
+    } else if (response.license === "GPL 3.0") {
+        response.badge = "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)"
+    } else if (response.license === "BSD 3") {
+        response.badge = "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)"
+    } else {
+        response.badge = "other/none"
+    } 
+}
+
+
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     
-    const readmeTemplate = `# ${data.projectname}
-    ## By: ${data.username}
-    
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [Contributors](#contributors)
-    * [License](#license)
-    
-    #Installation
-    Use the following command in your console to install dependencies:
-    <pre>${data.dependencycommand}</pre>
+    matchingBadge(data)
 
-    #Usage
-    Use the following command to run tests:
-    <pre>${data.testscommand}</pre>
+    const readmeTemplate = `
+# ${data.projectname}
+## Author: ${data.username}
 
-    Here's how to use the application: ${data.usingrepo}
-    Here's how to contribute to the application: ${data.contributingrepo}
+# Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributors](#contributors)
+* [License](#license)
 
-    ## Description
-    ${data.description}
+## Description
+${data.description}
 
-    ## Contributors
-    ${data.collaborators}
+# Installation
+Use the following command in your console to install dependencies:
+<pre>${data.dependencycommand}</pre>
 
-    ## License
-    This project is licensed under:
-    ${data.license}
+# Usage
+Use the following command to run tests:
+<pre>${data.testscommand}</pre>
 
-    # Contact
-    * GitHub account: ${data.username}
-    * E-Mail: ${data.email}
+**How to use the application**: ${data.usingrepo}
+<br><br>
+**How to contribute to the application**: ${data.contributingrepo}
+
+## Contributors
+${data.collaborators}
+
+## License
+This project is licensed under:
+${data.license}
+<pre></pre>
+${data.badge}
+
+
+# Contact
+* GitHub account: ${data.username}
+* E-Mail: ${data.email}
     `
     
-    fs.writeFile(fileName, JSON.stringify(readmeTemplate, null, '\t'), (err) =>
+    fs.writeFile(fileName, readmeTemplate, (err) =>
     err ? console.error(err) : console.log('Success!')
     )
 }
