@@ -27,7 +27,9 @@ Use the following command in your console to install dependencies:
 Use the following command to run the program:
 <pre>node index.js</pre>
 
-**How to use the application**: [This brief video gives you a walkthorugh of this application](https://youtu.be/3v37d0V2azg)<br>
+# Video Instructions
+**Click this video for instructions on how to use the application**: [This brief video gives you a walkthorugh of this application](https://youtu.be/3v37d0V2azg)<br>
+
 Otherwise, you will initialize the application by typing `node index.js` into the folder's terminal. Then, answer all ten questions. The README file will be generated and added in the same folder as `index.js`. You may leave some questions blank, though be warned that your README file will be incomplete.
 <br><br>
 
