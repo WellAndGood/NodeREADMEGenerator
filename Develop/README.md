@@ -1,4 +1,4 @@
-# Node - README Generator - Bootcamp Spot Project
+# Node - README Generator
 ## Author: WellAndGood
 
 # Table of Contents
